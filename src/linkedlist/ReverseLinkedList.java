@@ -4,35 +4,16 @@ import java.util.LinkedList;
 
 public class ReverseLinkedList {
 
-    static class Node{
-        int data;
-        Node next;
-
-        Node(int data){
-            this.data = data;
-        }
-
-        public void setNext(Node next) {
-            this.next = next;
-        }
-    }
-
     public static void main(String[] args) {
-        Node head = null;
-        Node tail = null;
+
+        OwnLinkedList ownLinkedList = new OwnLinkedList();
 
         for (int i = 1; i < 6; i++) {
-            Node node = new Node(i);
-            if (head == null){
-                head = node;
-            }else {
-                tail.setNext(node);
-            }
-            tail = node;
+            ownLinkedList.add(i);
         }
 
         System.out.println("After");
-        Node temp = head;
+        OwnLinkedList temp = ownLinkedList.getHead();
         while (temp != null){
             System.out.println(temp.data+" ");
             temp = temp.next;
@@ -40,7 +21,7 @@ public class ReverseLinkedList {
 
 
 //        Node result = reverse(head);
-        Node result = bReverse(head);
+        OwnLinkedList result = bReverse(OwnLinkedList.head);
         System.out.println("Before");
         temp = result;
         while (temp != null){
@@ -50,10 +31,10 @@ public class ReverseLinkedList {
 
     }
 
-    private static Node reverse(Node head){
-        Node pre = null;
-        Node next = null;
-        Node current = head;
+    private static OwnLinkedList reverse(OwnLinkedList head){
+        OwnLinkedList pre = null;
+        OwnLinkedList next = null;
+        OwnLinkedList current = head;
         while (current != null){
             next = current.next;
             current.next = pre;
@@ -63,11 +44,11 @@ public class ReverseLinkedList {
         return pre;
     }
 
-    private static Node bReverse(Node head){
+    private static OwnLinkedList bReverse(OwnLinkedList head){
         if(head == null || head.next == null)
             return head;
 
-        Node rest = bReverse(head.next);
+        OwnLinkedList rest = bReverse(head.next);
         head.next.next = head;
 
         head.next = null;
