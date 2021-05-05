@@ -50,5 +50,22 @@ public class OwnLinkedList {
         return tail;
     }
 
+    public void makeLoop(int data, int index){
+        OwnLinkedList ownLinkedList = new OwnLinkedList(data);
+        if (tail != null) {
+            tail.setNext(ownLinkedList);
+            tail = tail.getNext();
+            OwnLinkedList temp = head;
+            int counter = 0;
+            while (temp != null){
+                if (counter == index){
+                    tail.setNext(temp);
+                    break;
+                }
+                counter++;
+                temp = temp.getNext();
+            }
+        }
+    }
 
 }
