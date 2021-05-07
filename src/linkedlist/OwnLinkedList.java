@@ -52,7 +52,10 @@ public class OwnLinkedList {
 
     public void makeLoop(int data, int index){
         OwnLinkedList ownLinkedList = new OwnLinkedList(data);
-        if (tail != null) {
+        if (head == null) {
+            head = ownLinkedList;
+            tail = head;
+        }else {
             tail.setNext(ownLinkedList);
             tail = tail.getNext();
             OwnLinkedList temp = head;
