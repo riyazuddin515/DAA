@@ -2,11 +2,11 @@ package linkedlist;
 
 public class RemoveLoop {
     public static void main(String[] args) {
-        OwnLinkedList ownLinkedList = new OwnLinkedList();
-        ownLinkedList.makeLoop(10, 0);
+        Node node = new Node();
+        node.makeLoop(10, 0);
 
-        OwnLinkedList a = ownLinkedList.getHead();
-        OwnLinkedList b = ownLinkedList.getHead();
+        Node a = node.getHead();
+        Node b = node.getHead();
 
         while (a != null && b != null && b.getNext() != null) {
             a = a.getNext();
@@ -17,13 +17,13 @@ public class RemoveLoop {
         }
 
         if (a == b && a.next != null) {
-            if (a == ownLinkedList.getHead()) {
+            if (a == node.getHead()) {
                 b = b.next;
                 while (a != b.next) {
                     b = b.next;
                 }
             }else {
-                a = ownLinkedList.getHead();
+                a = node.getHead();
                 while (a.next != b.next) {
                     a = a.next;
                     b = b.next;
@@ -33,7 +33,7 @@ public class RemoveLoop {
             b.next = null; /* remove loop */
         }
 
-        OwnLinkedList temp = ownLinkedList.getHead();
+        Node temp = node.getHead();
         while (temp != null) {
             System.out.print(temp.data+" ");
             temp = temp.next;

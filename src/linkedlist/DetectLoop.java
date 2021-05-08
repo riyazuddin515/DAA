@@ -2,14 +2,14 @@ package linkedlist;
 
 public class DetectLoop {
     public static void main(String[] args) {
-        OwnLinkedList ownLinkedList = new OwnLinkedList();
-        ownLinkedList.add(10);
-        ownLinkedList.add(20);
-        ownLinkedList.add(30);
-        ownLinkedList.add(40);
+        Node node = new Node();
+        node.add(10);
+        node.add(20);
+        node.add(30);
+        node.add(40);
 
-        OwnLinkedList a = ownLinkedList.getHead();
-        OwnLinkedList b = ownLinkedList.getHead();
+        Node a = node.getHead();
+        Node b = node.getHead();
 
         boolean flag = false;
 

@@ -13,19 +13,19 @@ public class RemoveDuplicateData {
 //
 //        sorted(ownLinkedList);
 
-        OwnLinkedList ownLinkedList1 = new OwnLinkedList();
-        ownLinkedList1.add(2);
-        ownLinkedList1.add(2);
-        ownLinkedList1.add(4);
-        ownLinkedList1.add(5);
-        ownLinkedList1.add(2);
-        ownLinkedList1.add(2);
-        unSorted(ownLinkedList1);
+        Node node1 = new Node();
+        node1.add(2);
+        node1.add(2);
+        node1.add(4);
+        node1.add(5);
+        node1.add(2);
+        node1.add(2);
+        unSorted(node1);
     }
 
-    private static void sorted(OwnLinkedList ownLinkedList) {
-        OwnLinkedList a = ownLinkedList.getHead();
-        OwnLinkedList b = ownLinkedList.getHead();
+    private static void sorted(Node node) {
+        Node a = node.getHead();
+        Node b = node.getHead();
 
         while (b.next != null) {
             if (a.data != b.next.data) {
@@ -44,21 +44,21 @@ public class RemoveDuplicateData {
             a.next = null;
         }
 
-        OwnLinkedList temp = ownLinkedList.getHead();
+        Node temp = node.getHead();
         while (temp != null) {
             System.out.println(temp.data);
             temp = temp.next;
         }
     }
 
-    private static void unSorted(OwnLinkedList ownLinkedList) {
+    private static void unSorted(Node node) {
 
-        if (ownLinkedList.getHead() == null)
+        if (node.getHead() == null)
             return;
 
         HashMap<Integer, Integer> hashMap = new HashMap<>();
 
-        OwnLinkedList temp = ownLinkedList.getHead();
+        Node temp = node.getHead();
         while (temp != null) {
             if (!hashMap.containsKey(temp.data)){
                 hashMap.put(temp.data, 0);
@@ -66,8 +66,8 @@ public class RemoveDuplicateData {
             temp = temp.next;
         }
 
-        OwnLinkedList a = ownLinkedList.getHead();
-        OwnLinkedList b = ownLinkedList.getHead();
+        Node a = node.getHead();
+        Node b = node.getHead();
 
         hashMap.put(a.data, 1);
         //////////////////
@@ -84,7 +84,7 @@ public class RemoveDuplicateData {
             b = b.next;
         }
 
-        temp = ownLinkedList.getHead();
+        temp = node.getHead();
         while (temp != null) {
             System.out.println(temp.data);
             temp = temp.next;

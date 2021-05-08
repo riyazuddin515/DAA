@@ -2,14 +2,14 @@ package linkedlist;
 
 public class MoveLastToFirst {
     public static void main(String[] args) {
-        OwnLinkedList ownLinkedList = new OwnLinkedList();
-        ownLinkedList.add(1);
-        ownLinkedList.add(2);
-        ownLinkedList.add(3);
-        ownLinkedList.add(4);
-        ownLinkedList.add(5);
+        Node node = new Node();
+        node.add(1);
+        node.add(2);
+        node.add(3);
+        node.add(4);
+        node.add(5);
 
-        OwnLinkedList result = rajeev(ownLinkedList.getHead());
+        Node result = rajeev(node.getHead());
 //        OwnLinkedList result = riyaz(ownLinkedList.getHead());
         while (result != null) {
             System.out.println(result.data);
@@ -17,9 +17,9 @@ public class MoveLastToFirst {
         }
     }
 
-    private static OwnLinkedList rajeev(OwnLinkedList head) {
-        OwnLinkedList a = head;
-        OwnLinkedList b = head;
+    private static Node rajeev(Node head) {
+        Node a = head;
+        Node b = head;
 
         b = b.next;
 
@@ -37,8 +37,8 @@ public class MoveLastToFirst {
         return head;
     }
 
-    private static OwnLinkedList riyaz(OwnLinkedList head) {
-        OwnLinkedList temp = head;
+    private static Node riyaz(Node head) {
+        Node temp = head;
         if (temp.next == null)
             return head;
 

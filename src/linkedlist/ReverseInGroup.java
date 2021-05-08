@@ -8,22 +8,22 @@ public class ReverseInGroup {
 
         int k = 1;
 
-        OwnLinkedList ownLinkedList = new OwnLinkedList();
-        ownLinkedList.add(1);
+        Node node = new Node();
+        node.add(1);
 
-        OwnLinkedList temp = ownLinkedList.getHead();
+        Node temp = node.getHead();
         System.out.println("After");
         while (temp != null) {
             System.out.println(temp.data);
             temp = temp.next;
         }
 
-        Stack<OwnLinkedList> stack = new Stack<>();
+        Stack<Node> stack = new Stack<>();
 
-        OwnLinkedList h = null;
-        OwnLinkedList t = null;
+        Node h = null;
+        Node t = null;
 
-        temp = ownLinkedList.getHead();
+        temp = node.getHead();
         while (temp != null || !stack.isEmpty()){
             if (stack.size() < k && temp != null) {
                 stack.add(temp);
