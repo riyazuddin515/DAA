@@ -2,8 +2,8 @@ package linkedlist;
 
 public class Node {
 
-    private Node head = null;
-    private Node tail = null;
+    static Node head = null;
+    static Node tail = null;
 
     int data;
     Node next;
