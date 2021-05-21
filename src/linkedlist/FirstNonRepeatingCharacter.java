@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class FirstNonRepeatingCharacter {
     public static void main(String[] args) {
-        String a = "hrqcvsvszpsjammdrw";
+        String a = "aabc";
         int[] r = new int[26];
         Arrays.fill(r, 0);
 
