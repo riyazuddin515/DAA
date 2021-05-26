@@ -6,7 +6,7 @@ public class NQueens {
 
     public static void main(String[] args) {
 
-        NQueens(new boolean[8][8], 0, 0, 8, 0, "");
+        NQueens(new boolean[4][4], 0, 0, 4, 0, "");
     }
 
     private static void NQueens(boolean[][] board, int row, int col, int tq, int qstn, String ans) {
@@ -47,15 +47,6 @@ public class NQueens {
             }
             r--;
         }
-
-        //To Check Horizontally left
-//        r = row;
-//        c = col - 1;
-//        while (c >= 0) {
-//            if (board[r][c])
-//                return  false;
-//            c--;
-//        }
 
         //To check diagonally left up
         r = row - 1;
