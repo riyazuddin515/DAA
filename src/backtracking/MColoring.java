@@ -1,4 +1,4 @@
-package learning;
+package backtracking;
 
 import java.util.Arrays;
 
