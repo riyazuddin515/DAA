@@ -3,6 +3,9 @@ package backtracking;
 import java.util.Arrays;
 
 public class MColoring {
+
+    static int COUNTER = 0;
+
     public static void main(String[] args) {
 
         int vertices = 4;
@@ -18,8 +21,11 @@ public class MColoring {
 
     private static void mColoring(int[][] graph, int node, int[] assignedColors, int color, int maxColors) {
 
+        COUNTER++;
+
         //Return if current vertex is the end Vertex
         if (node == graph.length) {
+            System.out.println(COUNTER);
             System.out.println(Arrays.toString(assignedColors));
             return;
         }
