@@ -20,7 +20,7 @@ public class PostOrderTreeTraversal {
         postOrderIterative(root2);
     }
 
-    private static void postOrderRecursive(Node root) {
+    protected static void postOrderRecursive(Node root) {
         if (root == null)
             return;
         postOrderRecursive(root.left);
